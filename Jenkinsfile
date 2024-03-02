@@ -36,7 +36,7 @@ pipeline {
         }
         stage('Deploying container to Kubernetes') {
            steps {
-                sh "helm install project-1 python-project --set appimage=${registry}:v${BUILD_NUMBER}"
+                sh "helm install project-1 python-project-${BUILD_NUMBER} --set appimage=${registry}:v${BUILD_NUMBER}"
             }
         }      
     }
